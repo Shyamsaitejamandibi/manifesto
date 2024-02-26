@@ -1,113 +1,207 @@
+"use client";
+import Hero from "@/components/Ani";
+import Navbar from "@/components/Navbar";
+import Share from "@/components/Share";
+import LoginCards from "@/components/logincards";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Separator } from "@/components/ui/separator";
+import { Code, Mail, PhoneIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
+  const manifesto = () => {
+    window.open(
+      "https://drive.google.com/file/d/1kpKiFDOFnVnvkY5vkyf78Qd8yJlXxQoK/view?usp=drivesdk"
+    );
+  };
+  const feasibilityReport = () => {
+    window.open(
+      "https://drive.google.com/file/d/1QgFdDdmFkdpucEuQaMkobPDX4_ci1sBU/view?usp=drivesdk"
+    );
+  };
+  const manifestoVideo = () => {
+    window.open(
+      "https://drive.google.com/file/d/1QgFdDdmFkdpucEuQaMkobPDX4_ci1sBU/view?usp=drivesdk"
+    );
+  };
+  const whatsappGroup = () => {
+    window.open("https://chat.whatsapp.com/KGAhQGXfiKP1A35BGoLMd2");
+  };
+  const instagramHandle = () => {
+    window.open("https://www.instagram.com/akhil_marni?igsh=OWI0c251YmowYWg2");
+  };
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <>
+      {/* <Hero /> */}
+      <Image
+        src="/image/akhil.jpg"
+        alt="Logo"
+        width={1920}
+        height={1080}
+        className="h-[124vh] md:h-screen w-full object-cover"
+        style={{ objectPosition: "50% 30%" }}
+      />
+      <div className="flex justify-center">
+        <div className="absolute px-4 pt-3 max-w-5xl bg-white border-2 rounded-xl top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/50">
+          <Navbar />
+          <div className="border-t-2 border-gray-300 my-3 mx-5"></div>
+          <div className="flex justify-center items-center">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              src="/image/akhil.jpg"
+              alt="Left Logo"
+              width={200}
+              height={200}
+              className="flex justify-center rounded-2xl mt-4"
             />
-          </a>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 mx-20 pt-8">
+            <LoginCards
+              number={1}
+              description="Manifesto"
+              handleSubmit={manifesto}
+              className="pr-28"
+            />
+            <LoginCards
+              number={2}
+              description="Feasibility Report"
+              handleSubmit={feasibilityReport}
+              className="pr-20"
+            />
+            <LoginCards
+              number={3}
+              description="Manifesto Video"
+              handleSubmit={manifestoVideo}
+              className="pr-20"
+            />
+            <LoginCards
+              number={4}
+              description="Whatsapp Group"
+              handleSubmit={whatsappGroup}
+              className="pr-20"
+            />
+            <LoginCards
+              number={5}
+              description="Instagram Handle"
+              handleSubmit={instagramHandle}
+              className="pr-20"
+            />
+
+            <Dialog>
+              <DialogTrigger asChild>
+                <button>
+                  <LoginCards
+                    description="Contact details"
+                    className="pr-20"
+                    number={6}
+                  />
+                </button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px] ">
+                <DialogHeader className="flex">
+                  <DialogTitle className="flex flex-col items-center">
+                    <div className="pb-4">Contact details</div>
+                    <Separator />
+                    {/* <div className="text-3xl justify-center font-semibold">
+                    Akhil Marni
+                  </div> */}
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="card">
+                  <div className="top">
+                    <h2 className="name">Akhil</h2>
+                    <Image
+                      src="/image/akhil.jpg"
+                      alt="Logo"
+                      width={30}
+                      height={30}
+                      className="circle-img"
+                    />
+                  </div>
+                  <div className="bottom">
+                    <div className="info flex gap-x-4">
+                      <Mail size={24} />
+                      <a href="mailto:ee21b084@smail.iitm.ac.in">
+                        ee21b084@smail.iitm.ac.in
+                      </a>
+                    </div>
+                    <div className="info flex gap-x-4">
+                      <PhoneIcon size={24} />
+                      <a href="tel:+917386383555">+91 73863 83555</a>
+                    </div>
+                    <div className="info flex gap-x-4">
+                      <Code size={24} />
+                      <Link href="http://instihasakhil.me/">
+                        instihasakhil.me
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                <DialogFooter>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button variant="outline">Share</Button>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-md">
+                      <DialogHeader>
+                        <DialogTitle>Share link</DialogTitle>
+                      </DialogHeader>
+                      <Share description="contact" />
+                      <DialogFooter className="sm:justify-start">
+                        <DialogClose asChild>
+                          <Button type="button" variant="secondary">
+                            Close
+                          </Button>
+                        </DialogClose>
+                      </DialogFooter>
+                    </DialogContent>
+                  </Dialog>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+          </div>
+          <div className="flex mt-8 mb-0.5 items-center justify-center  text-black font-customFont p-4 rounded-md font-bold text-2xl">
+            #INSTIHASAKHIL
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      {/* <div className="flex justify-center">
+        <div className="absolute top-0 w-full">
+          <div className="relative">
+            <video
+              autoPlay
+              muted
+              loop
+              className="-rotate-45 h-64 w-64 object-cover"
+            >
+              <source src="/blackhole.webm" type="video/webm" />
+            </video>
+          </div>
+        </div>
+      </div> */}
+      {/* <div className="flex justify-end absolute top-0 right-0 w-full">
+        <div className="relative">
+          <video
+            autoPlay
+            muted
+            loop
+            className="rotate-70 h-32 w-32 object-cover"
+          >
+            <source src="/blackhole.webm" type="video/webm" />
+          </video>
+        </div>
+      </div> */}
+    </>
   );
 }
