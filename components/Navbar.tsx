@@ -26,7 +26,7 @@ const Navbar = () => {
           className="w-10 h-10 mr-1 md:w-14 md:h-14 md:mr-2"
         />
       </div>
-      <h1 className=" text-2xl font-customFont text-customDarkBlue">
+      <h1 className="text-xl md:text-2xl  font-customFont text-customDarkBlue">
         Akhil Marni
       </h1>
       <div className="flex items-center">

@@ -69,31 +69,26 @@ export default function Home() {
               number={1}
               description="Manifesto"
               handleSubmit={manifesto}
-              className="pr-28"
             />
             <LoginCards
               number={2}
               description="Feasibility Report"
               handleSubmit={feasibilityReport}
-              className="pr-20"
             />
             <LoginCards
               number={3}
               description="Manifesto Video"
               handleSubmit={manifestoVideo}
-              className="pr-20"
             />
             <LoginCards
               number={4}
               description="Whatsapp Group"
               handleSubmit={whatsappGroup}
-              className="pr-20"
             />
             <LoginCards
               number={5}
               description="Instagram Handle"
               handleSubmit={instagramHandle}
-              className="pr-20"
             />
 
             <Dialog>
