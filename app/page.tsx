@@ -1,5 +1,4 @@
 "use client";
-import Hero from "@/components/Ani";
 import Navbar from "@/components/Navbar";
 import Share from "@/components/Share";
 import LoginCards from "@/components/logincards";

@@ -128,7 +128,7 @@ body {
 /* CSS */
 .button-86 {
   all: unset;
-  width: 300px;
+  width: auto;
   height: 30px;
   font-size: 16px;
   background: transparent;
@@ -139,8 +139,7 @@ body {
   z-index: 1;
   padding: 10px 20px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: center; /* Center vertically */
   white-space: nowrap;
   user-select: none;
   -webkit-user-select: none;
@@ -191,4 +190,8 @@ body {
 .button-86:active::after {
   transition: 0s;
   transform: translate(0, 5%);
+}
+
+.button-86 p {
+  margin: 0;
 }
