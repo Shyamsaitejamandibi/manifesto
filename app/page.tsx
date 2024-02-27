@@ -48,11 +48,11 @@ export default function Home() {
         alt="Logo"
         width={1920}
         height={1080}
-        className="h-[124vh] md:h-screen w-full object-cover"
+        className="h-[110vh] md:h-screen w-full object-cover"
         style={{ objectPosition: "50% 30%" }}
       />
       <div className="flex justify-center">
-        <div className="absolute px-4 pt-3 max-w-5xl bg-white border-2 rounded-xl top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/50">
+        <div className="absolute pt-3 max-w-5xl bg-white border-2 rounded-xl top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/50">
           <Navbar />
           <div className="border-t-2 border-gray-300 my-3 mx-5"></div>
           <div className="flex justify-center items-center">
